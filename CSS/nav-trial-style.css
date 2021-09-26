@@ -1,0 +1,159 @@
+/* ########### Basic Configurations(CSS Resets) ########### */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
+    background: #e0e0e0;
+}
+
+*,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0.15rem;
+    word-spacing: 0.15rem;
+    line-height: 2rem;
+}
+
+@media (max-width:1360px){
+    :root{
+        font-size: 50%;
+    }
+}
+
+/* ########### Utility Classes ########### */
+
+.margin-setter{
+    width: 72vmax;
+    margin: 0 auto;
+    padding: 0.5em 2em;
+}
+.theme-clr{
+    color:  crimson;
+}
+.theme-inverse-clr{
+    color: white;
+}
+.largest-font{
+    font-size: 3rem;
+}
+.large-font{
+    font-size: 2rem;
+}
+.normal-font{
+    font-size: 1.6rem;
+}
+.small-font{
+    font-size: 1.2rem;
+}
+.btn{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+/* ########### Navigation Bar ########### */
+nav{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-content: center;
+    z-index: 3;
+    top: 0rem;
+    height: 6rem;
+}
+nav .nav-icon{
+    display: none;
+}
+nav .nav-checkbox{
+    display: none;
+    z-index: 4;
+    position: absolute;
+    transform: scale(3);
+    top: 2rem;
+    left: 3rem;
+    opacity: 0;
+}
+nav input[type='checkbox']:checked{
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+.nav-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-text{
+    display: none;
+    text-transform: uppercase;
+}
+.nav-div ul li{
+    display: inline-block;
+    list-style-type: none;
+}
+.nav-div ul li a{
+    text-decoration: none;
+    padding: 1rem 0;
+    color:  crimson;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+}
+.nav-div ul li a:hover{
+    color:white;
+    background: rgba(128, 128, 128, 0.3);
+    padding: 1rem;
+}
+.nav-div img{
+    width: 5rem;
+    height: 5rem;
+}
+
+
+@media (max-width:1100px){
+    nav .nav-icon{
+        display: inline;
+    }
+    nav .nav-checkbox{
+        display: inline;
+    }
+    .nav-div{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .nav-text{
+        display: block;
+    }
+    .nav-div ul{
+        display: none;
+    }
+    nav input[type='checkbox']:checked~.nav-div ul{
+        display: block;
+        position: absolute;
+        top: 5.6rem;
+        left: -0.2rem;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 3;
+        padding: 2rem 1rem;
+    }
+    nav input[type='checkbox']:checked~.nav-div ul li{
+        display: flex;
+        direction: column;
+        border-bottom:white 2px solid;
+    }
+}
+
+
+
+.home-header{
+    height: 75.5rem;
+    background: repeating-linear-gradient(black,rgba(107, 106, 106, 0.4), rgba(0,0,0,0), rgba(0,0,0,0)), url('../Img/Home-BG.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 22vh 0;
+}
